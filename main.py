@@ -14,11 +14,12 @@ bot = Bot(
 )
 
 xbot = TelegramClient("PROBOYX", API_ID, API_HASH).start(bot_token=BOT_TOKEN)
-if __name__ == '__main__':
-  xbot.run_until_disconnected()
 
 bot.start()
 run()
 @xbot.on(events.NewMessage(pattern="/owner"))
 async def owner (event):
   await xbot.send_message(event.chat_id, "THIS IS MY OWNER", buttons=[[Button.url("PROBOYX", "https://t.me/proboyx")]])
+
+if __name__ == '__main__':
+  xbot.run_until_disconnected()
